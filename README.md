@@ -1,6 +1,6 @@
 # 🤖 Path Finder - Assessment 2 Starting Repo
 
-This repository serves as the starting repository for **Assessment 2** of the **BSc Computing** module **UG409765 - Software Construction** and serves as the foundation for the Priority Queue class library assignment. It includes a basic path-finding visualiser and grid loader that you will extend by implementing additional algorithms and improving the internal architecture. The project also builds on the Priority Queue class library you created in Assessment 1.
+This repository serves as the starting repository for **Assessment 2** of the **BSc Computing** module **UG409765 - Software Construction**. It includes a basic path-finding visualiser and grid loader that you will extend by implementing additional algorithms and improving the internal architecture. The project also builds on the Priority Queue class library you created in Assessment 1.
 
 ## ℹ️ **Overview**
 The starting application loads a map file, displays it in a grid and animates a robot moving across the terrain. The pathfinding logic is deliberately simple so you can focus on constructing implementations of Breadth-First Search (BFS) and A*, and then integrate your own Priority Queue to manage robot jobs.
