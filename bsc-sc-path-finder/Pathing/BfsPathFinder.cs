@@ -3,8 +3,23 @@ using System.Drawing;
 
 namespace bsc_sc_path_finder
 {
+
+    /// <summary>
+    /// Implements Breadth-First Search (BFS) pathfinding.
+    /// Explores the grid level-by-level and guarantees the shortest path
+    /// in an unweighted environment.
+    /// </summary>
     public class BfsPathFinder : IPathFinder
     {
+
+        /// <summary>
+        /// Finds the shortest path from start to goal using BFS.
+        /// Expands nodes in layers and avoids obstacles.
+        /// </summary>
+        /// <param name="grid">Grid representing the world.</param>
+        /// <param name="start">Starting position.</param>
+        /// <param name="goal">Target position.</param>
+        /// <returns>List of points representing the shortest path, or empty list if no path exists.</returns>
         public List<Point> FindPath(
             Grid grid,
             Point start,

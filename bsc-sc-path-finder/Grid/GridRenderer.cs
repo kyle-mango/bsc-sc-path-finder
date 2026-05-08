@@ -1,16 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Collections.Generic;
 
 namespace bsc_sc_path_finder
 {
+
+    /// <summary>
+    /// Responsible for rendering the grid, robot, and jobs onto the screen.
+    /// Handles all visual representation logic for the simulation.
+    /// </summary>
     public class GridRenderer
     {
         private readonly Grid grid;
         private readonly int tileSize;
+
+        /// <summary>
+        /// Gets the pixel size of each grid tile.
+        /// </summary>
         public int TileSize { get { return tileSize; } }
 
+        /// <summary>
+        /// Creates a new renderer for a given grid.
+        /// </summary>
+        /// <param name="grid">The grid to render.</param>
+        /// <param name="tileSize">Pixel size of each tile.</param>
         public GridRenderer(Grid grid, int tileSize = 32)
         {
             this.grid = grid ?? throw new ArgumentNullException(nameof(grid));
@@ -18,6 +31,12 @@ namespace bsc_sc_path_finder
             this.tileSize = tileSize;
         }
 
+        /// <summary>
+        /// Draws the grid, jobs, and robot onto the screen.
+        /// </summary>
+        /// <param name="g">Graphics context.</param>
+        /// <param name="robot">Robot instance (optional).</param>
+        /// <param name="jobs">List of jobs (optional).</param>
         public void Draw(Graphics g, Robot robot = null, List<Job> jobs = null)
         {
             if (g == null) throw new ArgumentNullException(nameof(g));
