@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36705.20 d17.14
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11612.150
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bsc-sc-path-finder", "bsc-sc-path-finder\bsc-sc-path-finder.csproj", "{2127CBB3-B3AD-425C-8D48-28DFFDEF0EFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bsc-sc-path-finder-tests", "bsc-sc-path-finder-tests\bsc-sc-path-finder-tests.csproj", "{6A1C3F37-2001-45A5-84A6-B1371307F250}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2127CBB3-B3AD-425C-8D48-28DFFDEF0EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2127CBB3-B3AD-425C-8D48-28DFFDEF0EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2127CBB3-B3AD-425C-8D48-28DFFDEF0EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A1C3F37-2001-45A5-84A6-B1371307F250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1C3F37-2001-45A5-84A6-B1371307F250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A1C3F37-2001-45A5-84A6-B1371307F250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A1C3F37-2001-45A5-84A6-B1371307F250}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
