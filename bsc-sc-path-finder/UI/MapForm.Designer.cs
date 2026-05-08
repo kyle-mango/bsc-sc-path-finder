@@ -37,6 +37,7 @@
             this.Lbl_RobotStatus = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Lbl_JobList = new System.Windows.Forms.Label();
+            this.Cmb_PathFinder = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.Controls.Add(this.Cmb_PathFinder);
             this.panel2.Controls.Add(this.Btn_ExecuteJob);
             this.panel2.Controls.Add(this.Btn_LoadMap);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -137,6 +139,19 @@
             this.Lbl_JobList.TabIndex = 4;
             this.Lbl_JobList.Text = "No items to display";
             // 
+            // Cmb_PathFinder
+            // 
+            this.Cmb_PathFinder.FormattingEnabled = true;
+            this.Cmb_PathFinder.Items.AddRange(new object[] {
+            "BFS",
+            "A*"});
+            this.Cmb_PathFinder.Location = new System.Drawing.Point(290, 173);
+            this.Cmb_PathFinder.Name = "Cmb_PathFinder";
+            this.Cmb_PathFinder.Size = new System.Drawing.Size(121, 21);
+            this.Cmb_PathFinder.TabIndex = 5;
+            this.Cmb_PathFinder.Text = "A*";
+            this.Cmb_PathFinder.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // MapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,6 +181,7 @@
         private System.Windows.Forms.Label Lbl_JobList;
         private System.Windows.Forms.Button Btn_ExecuteJob;
         private System.Windows.Forms.Button Btn_LoadMap;
+        private System.Windows.Forms.ComboBox Cmb_PathFinder;
     }
 }
 

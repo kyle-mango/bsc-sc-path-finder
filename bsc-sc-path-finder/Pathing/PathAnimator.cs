@@ -46,7 +46,8 @@ namespace bsc_sc_path_finder
             if (index >= path.Count)
             {
                 Stop();
-                MapForm.OnPathAnimationComplete();
+                ((MapForm)targetControl.FindForm())
+                    .OnPathAnimationComplete();
                 return;
             }
 

@@ -3,27 +3,27 @@ using System.Drawing;
 
 namespace bsc_sc_path_finder
 {
-    public class DumbPathFinder
+    public class DumbPathFinder : IPathFinder
     {
-        public List<Point> FindPath(Point start, Point goal)
+        public List<Point> FindPath(
+            Grid grid,
+            Point start,
+            Point goal)
         {
             var path = new List<Point>();
+
             int x = start.X;
             int y = start.Y;
 
-            // Move horizontally first
             while (x != goal.X)
             {
-                if (goal.X > x) x++;
-                else x--;
+                x += goal.X > x ? 1 : -1;
                 path.Add(new Point(x, y));
             }
 
-            // Then move vertically
             while (y != goal.Y)
             {
-                if (goal.Y > y) y++;
-                else y--;
+                y += goal.Y > y ? 1 : -1;
                 path.Add(new Point(x, y));
             }
 

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace bsc_sc_path_finder
 {
@@ -16,7 +18,7 @@ namespace bsc_sc_path_finder
             this.tileSize = tileSize;
         }
 
-        public void Draw(Graphics g, Robot robot = null)
+        public void Draw(Graphics g, Robot robot = null, List<Job> jobs = null)
         {
             if (g == null) throw new ArgumentNullException(nameof(g));
 
@@ -29,6 +31,21 @@ namespace bsc_sc_path_finder
 
                     if (sprite == null) g.FillRectangle(Brushes.Magenta, x * tileSize, y * tileSize, tileSize, tileSize);
                     else g.DrawImage(sprite, x * tileSize, y * tileSize, tileSize, tileSize);                    
+                }
+            }
+
+            if (jobs != null)
+            {
+                foreach (Job job in jobs)
+                {
+                    g.DrawImage(
+                        job.Type.Sprite,
+
+                        job.Position.X * tileSize,
+                        job.Position.Y * tileSize,
+
+                        tileSize,
+                        tileSize);
                 }
             }
 
