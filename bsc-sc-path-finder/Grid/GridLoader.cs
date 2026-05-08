@@ -3,9 +3,21 @@ using System.Drawing;
 using System.IO;
 
 namespace bsc_sc_path_finder
-{    
+{
+
+    /// <summary>
+    /// Responsible for loading grid data from a text file representation.
+    /// Converts character-based map files into Grid objects and extracts
+    /// the robot starting position.
+    /// </summary>
     public static class GridLoader
     {
+
+        /// <summary>
+        /// Loads a grid and robot starting position from a file.
+        /// </summary>
+        /// <param name="path">File path to the map data.</param>
+        /// <returns>A tuple containing the created Grid and robot start position.</returns>
         public static (Grid grid, Point robotStart) LoadFromFile(string path)
         {
             // Throw exception if path not provided, or path is null

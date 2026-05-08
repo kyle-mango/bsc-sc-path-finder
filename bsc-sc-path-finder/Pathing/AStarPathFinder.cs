@@ -6,8 +6,18 @@ using PriorityQueue;
 namespace bsc_sc_path_finder
 {
 
+    /// <summary>
+    /// Implements the A* pathfinding algorithm using Manhattan distance.
+    /// Finds the shortest path by combining actual cost (g-score)
+    /// with heuristic cost (estimated distance to goal).
+    /// </summary>
     public class AStarPathFinder : IPathFinder
     {
+
+        /// <summary>
+        /// Calculates the Manhattan distance heuristic between two points.
+        /// Used to estimate remaining distance to the goal.
+        /// </summary>
         private int Heuristic(
             Point a,
             Point b)
@@ -17,6 +27,14 @@ namespace bsc_sc_path_finder
                 System.Math.Abs(a.Y - b.Y);
         }
 
+        /// <summary>
+        /// Finds an optimal path from start to goal using A* search.
+        /// Considers obstacles and prioritises lower-cost paths using a priority queue.
+        /// </summary>
+        /// <param name="grid">Grid representing the world.</param>
+        /// <param name="start">Starting position.</param>
+        /// <param name="goal">Target position.</param>
+        /// <returns>List of points representing the shortest path, or empty list if no path exists.</returns>
         public List<Point> FindPath(
             Grid grid,
             Point start,

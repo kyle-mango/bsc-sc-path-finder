@@ -5,6 +5,11 @@ using System.Collections.Generic;
 
 namespace bsc_sc_path_finder
 {
+
+    /// <summary>
+    /// Main user interface form for the Mars Rover Path Finder application.
+    /// Handles map loading, job creation, robot movement, and path execution.
+    /// </summary>
     public partial class MapForm : Form
     {
         private GridRenderer gridRenderer;
@@ -18,6 +23,11 @@ namespace bsc_sc_path_finder
         private List<Job> jobs = new List<Job>();
         private List<JobType> jobTypes;
 
+
+        /// <summary>
+        /// Initialises the form and configures UI settings such as double buffering
+        /// and default pathfinding selection.
+        /// </summary>
         public MapForm()
         {
             InitializeComponent();
@@ -29,6 +39,9 @@ namespace bsc_sc_path_finder
             Cmb_PathFinder.SelectedIndex = 1;
         }
 
+        /// <summary>
+        /// Handles loading a map file selected by the user.
+        /// </summary>
         private void Btn_LoadMap_Click(object sender, EventArgs e)
         {
             var dialog = new OpenFileDialog();
@@ -39,6 +52,10 @@ namespace bsc_sc_path_finder
             }
         }
 
+        /// <summary>
+        /// Initialises the grid, robot, jobs, and rendering system from a map file.
+        /// </summary>
+        /// <param name="filePath">Path to the map file.</param>
         private void InitGridFromFile(string filePath)
         {
             try
@@ -98,6 +115,9 @@ namespace bsc_sc_path_finder
             }
         }
 
+        /// <summary>
+        /// Returns the currently selected pathfinding algorithm from the UI.
+        /// </summary>
         private IPathFinder GetSelectedPathFinder()
         {
             if (Cmb_PathFinder.SelectedItem == null)
@@ -116,11 +136,17 @@ namespace bsc_sc_path_finder
             return new AStarPathFinder();
         }
 
+        /// <summary>
+        /// Handles map rendering on screen.
+        /// </summary>
         private void Panel_Map_Paint(object sender, PaintEventArgs e)
         {            
             if (gridRenderer != null) gridRenderer.Draw(e.Graphics, robot, jobs);
         }
 
+        /// <summary>
+        /// Handles user interaction with the map including job creation and execution.
+        /// </summary>
         private void Panel_Map_MouseClick(
             object sender,
             MouseEventArgs e)
@@ -207,6 +233,10 @@ namespace bsc_sc_path_finder
                 $"Executing {activeJob.Type.Name}";
         }
 
+        /// <summary>
+        /// Called when robot finishes moving along a path.
+        /// Removes completed job and updates UI.
+        /// </summary>
         public void OnPathAnimationComplete()
         {
             if (activeJob != null)
@@ -221,6 +251,9 @@ namespace bsc_sc_path_finder
             MessageBox.Show("Move operation complete");
         }
 
+        /// <summary>
+        /// Updates pathfinding strategy when user changes selection.
+        /// </summary>
         private void comboBox1_SelectedIndexChanged(
             object sender,
             EventArgs e)
